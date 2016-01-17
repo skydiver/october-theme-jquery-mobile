@@ -1,0 +1,24 @@
+title = "Demo Launcher"
+url = "/demos/:page/:subpage?"
+is_hidden = 0
+==
+<?php
+function onStart() {
+    
+    $assets_path = asset('themes/jquery-mobile/assets/demo/');
+    
+    if($this->param('subpage')) {
+        $file = '/' . $this->param('subpage') . '.html';
+    } else {
+        $file = '/index.html';
+    }
+    
+    $page = themes_path() . '/jquery-mobile/pages/demos/' . $this->param('page') . $file;
+    
+    $first_level = '/demos/' . $this->param('page');
+
+    require_once($page);
+
+}
+?>
+==

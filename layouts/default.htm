@@ -1,0 +1,32 @@
+==
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>{{ this.page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ ['assets/css/themes/default/jquery.mobile-1.4.5.min.css']|theme }}" rel="stylesheet">
+    {% styles %}
+    <script src="{{ ['assets/js/jquery.min.js', 'assets/js/jquery.mobile-1.4.5.min.js', '@framework', '@framework.extras']|theme }}"></script>
+    {% scripts %}
+</head>
+
+<body>
+
+    <div data-role="page">
+
+        <div data-role="header">
+            <h1>Site Header</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            {% page %}
+        </div>
+
+        <div data-role="footer">
+            <h4>Site Footer</h4>
+        </div>
+    
+    </div>
+
+</body>
+</html>
